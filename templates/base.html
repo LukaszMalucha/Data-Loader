@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="{% url 'dashboard' %}"><i class="large material-icons">blur_on</i> <strong>Data Labs</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href=""><i class="large material-icons">blur_on</i> <strong>Data Labs</strong></a>
 
                 <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
@@ -52,23 +52,10 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="#" class="waves-effect waves-dark"><img src="{% static 'img/global.png' %}" id="icon">World Life Expectancy<span class="fas fa-angle-left" style="float: right;"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{% url 'life_expectancy' %}"><img src="{% static 'img/tableau_logo.png' %}" id="icon">Tableau Dashboard</a>
-                            </li>
-                        </ul>
+                        <a href="{% url 'mongo_loader' %}" class="waves-effect waves-dark"><img src="{% static 'img/mongodb_logo.png' %}" id="icon">MongoDB<span class="fas fa-angle-left" style="float: right;"></span></a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect waves-dark"><img src="{% static 'img/daft_logo.png' %}" id="icon">Daft Analytics<span class="fas fa-angle-left" style="float: right;"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{% url 'daft_dashboard' %}"><img src="{% static 'img/tableau_logo.png' %}" id="icon">Tableau Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'price_estimator' %}"><img src="{% static 'img/python_logo.png' %}" id="icon"> Price Estimator</a>
-                            </li>
-                        </ul>
+                        <a href="#" class="waves-effect waves-dark"><img src="{% static 'img/mysql_logo.png' %}" id="icon">MySQL<span class="fas fa-angle-left" style="float: right;"></span></a>
                     </li>
                 </ul>
 
