@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<div id="page-wrapper">
+    <div class="header">
+        <h1 class="page-header">
+            Add Name
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+
+        </ol>
+
+    </div>
+    <div id="page-inner">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="dashboard-cards">
+            <div class="row">
+
+                <div class="col-md-4 col-lg-4 text-center">
+                    <div class="card" id="form-card">
+                        <form method="POST" enctype="multipart/form-data" id="skill-form">
+                            {% csrf_token %} {% for field in form %} {{ field.errors }}
+                            <label>{{field.label}}</label>
+                            <input placeholder="{{field.label}}" name="{{field.name}}" class="form-control" />
+                            <div class=row></div>
+                            {% endfor %}
+                            <div class=row></div>
+
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

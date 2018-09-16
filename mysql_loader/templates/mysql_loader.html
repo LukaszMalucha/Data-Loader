@@ -2,14 +2,32 @@
 
 
 <div id="page-wrapper">
+
+
     <div class="header">
         <h1 class="page-header">
             MySQL Data Loader
+            <a href="{% url 'add_name' %}">Add</a>
         </h1>
+
         <ol class="breadcrumb">
-            <li class="active"href="">Home</li>
+            <li class="active" href="">Home</li>
         </ol>
 
+    </div>
+    <div id="page-inner">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="dashboard-cards">
+            <div class="row">
+
+                <h2> Names </h2>
+                {% for name in names %}
+                <h3>{{ name.name }}</h3>
+                {% endfor %}
+
+            </div>
+        </div>
     </div>
 </div>
 
