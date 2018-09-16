@@ -7,6 +7,9 @@ from django.utils import timezone
 
 ## BASIC VIEWS
 
-def mongo_loader(request):
+def mysql_loader(request):
     
-    return render(request, "mongo_loader.html")
+    return render(request, "mysql_loader.html")
+    
+    
+    

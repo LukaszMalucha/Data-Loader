@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mongo_loader import urls as mongo_loader_urls
+from mysql_loader import urls as mysql_loader_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(mongo_loader_urls)),
+    path('', include(mysql_loader_urls)),
 ]
