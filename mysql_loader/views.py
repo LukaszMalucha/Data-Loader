@@ -78,7 +78,7 @@ def database_upload(request, file):
     with open('media/documents/%s' % file) as f:
         reader = csv.reader(f)
         for row in reader:
-            names.append(row)
+            _, created = Names.objects.get_or_create(name=row[0])
     
     
     

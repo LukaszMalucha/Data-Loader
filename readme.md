@@ -2,4 +2,4 @@
 
 
 ## MySQL document loader
-(work in progress)
+Django mechanic for database csv file upload.
