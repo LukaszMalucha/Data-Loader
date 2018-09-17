@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<div id="page-wrapper">
+    <div class="header">
+        <h1 class="page-header">
+            Add Name
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+
+        </ol>
+
+    </div>
+    <div id="page-inner">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="dashboard-cards">
+            <div class="row">
+
+                <div class="col-md-4 col-lg-4 text-center">
+                    <div class="card" id="form-card">
+                        {{document}}
+                        {{names}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

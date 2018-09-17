@@ -7,8 +7,9 @@
     <div class="header">
         <h1 class="page-header">
             MySQL Data Loader
-            <a href="{% url 'add_name' %}">Add</a>
+            
         </h1>
+        
 
         <ol class="breadcrumb">
             <li class="active" href="">Home</li>
@@ -17,10 +18,16 @@
     </div>
     <div id="page-inner">
         <div class="row"></div>
+        <a href="{% url 'add_name' %}">Add</a>
         <div class="row"></div>
+        <a href="{% url 'delete_names' %}">Clean Database</a>
+        <div class="row"></div>
+        <a href="{% url 'add_document' %}">Add Document</a>
+        <div class="row"></div>
+        <a href="{% url 'manage_documents' %}">Manage Document</a>
         <div class="dashboard-cards">
             <div class="row">
-
+    {{rows}}
                 <h2> Names </h2>
                 {% for name in names %}
                 <h3>{{ name.name }}</h3>

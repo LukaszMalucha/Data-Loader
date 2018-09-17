@@ -3,8 +3,10 @@ from django.contrib import messages, auth
 from django.urls import reverse
 from django.http import HttpResponseRedirect, Http404  
 from django.utils import timezone
-from .models import Names
-from .forms import AddNameForm
+from .models import Names, Document
+from .forms import AddNameForm, DocumentForm
+import os
+import csv
 
 ## BASIC VIEWS
 
@@ -36,3 +38,49 @@ def add_name(request):
     return render(request, "add_name.html", {'form': form })        
     
     
+def delete_names(request):
+    
+
+    names = Names.objects.all()
+    names.delete()
+        
+    return redirect(reverse('mysql_loader'))
+    
+    
+def add_document(request):
+    
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            
+            
+            
+            
+            return redirect('mysql_loader')
+    else:
+        form = DocumentForm()
+    return render(request, 'add_document.html', {'form': form })    
+    
+def manage_documents(request):
+    
+    mypath = 'media/documents'
+    files = os.listdir(mypath)
+    
+    
+    return render(request, 'manage_documents.html', {'files': files})
+    
+    
+def database_upload(request, file):
+    
+    names = []
+    document = file 
+    with open('media/documents/%s' % file) as f:
+        reader = csv.reader(f)
+        for row in reader:
+            names.append(row)
+    
+    
+    
+    
+    return render(request, 'try.html', {'document': document, 'names': names})
