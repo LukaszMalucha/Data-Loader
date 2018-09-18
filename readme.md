@@ -2,4 +2,4 @@
 
 
 ## MySQL document loader
-Django mechanic for database csv file upload.
+Django mechanic for database csv file upload. Connected  to ElephantSQL
