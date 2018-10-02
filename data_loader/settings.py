@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
-    'mysql_loader'
+    'mysql_loader',
+    'profile_estimator'
 ]
 
 MIDDLEWARE = [

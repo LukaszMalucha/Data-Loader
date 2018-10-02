@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mysql_loader import urls as mysql_loader_urls
+from profile_estimator import urls as profile_estimator_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(mysql_loader_urls)),
+    path('profile_estimator', include(profile_estimator_urls))
 ]
