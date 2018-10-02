@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.urls import reverse
 from django.http import HttpResponseRedirect, Http404  
 from django.utils import timezone
+from .forms import SkillsForm
 import os
 import csv
 
@@ -10,6 +11,7 @@ import csv
 
 def profile(request):
     
+    form = SkillsForm(request.POST)
     
-    return render(request, "profile.html" )
+    return render(request, "profile.html",  {'form': form })
     
