@@ -9,7 +9,7 @@ class SkillsForm(forms.ModelForm):
     
     class Meta:
         model = Skills
-        fields = ['skill']
+        fields = ['skills']
         widgets = {
-            'skill': forms.Textarea(),
+            'skills': forms.Textarea(),
         }

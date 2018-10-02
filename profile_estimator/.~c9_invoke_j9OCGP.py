@@ -16,16 +16,15 @@ def profile(request):
     if request.method == 'POST':
         
         if form.is_valid():
-            request.session['skills'] = request.POST['skills']
     
-            return redirect(reverse('estimate'))
+    
     
     return render(request, "profile.html",  {'form': form })
     
-    
-def estimate(request):
-    
-    skills = request.session.get('skills')
-    
-    
-    return render(request, "estimate.html",  {'skills': skills })
+
+
+
+
+
+
+

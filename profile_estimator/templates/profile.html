@@ -25,6 +25,7 @@
                 <div class="col-md-4 col-lg-4 text-center">
                     <div class="card" id="form-card">
                         <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token%}
                             <h4>Skills</h4>
                              {% for field in form %} {{ field.errors }}
                             <label>{{field.label}}</label>
