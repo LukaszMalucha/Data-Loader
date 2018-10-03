@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect, Http404
 from django.utils import timezone
 from .forms import SkillsForm
 from .models import DataSkill
+import pandas as pd
 import os
 import csv
 
@@ -28,21 +29,20 @@ def estimate(request):
     
     skills = request.session.get('skills')
     skills = skills.split(',')
-    dataskills = DataSkill.objects.values()
+    # dataskills = DataSkill.objects.all()
     # dataskills = dataskills.objects.values()
+    
+    
+    
+    dataskills = pd.DataFrame(list(DataSkill.objects.all().values()))
     check = [type(dataskills)]
-    
-    # results = []
-    # for element in skills:
-    #     res = 0
-    #     if element in dataskills:
-    #         res += dataskills[element]
-    #     results.append(res)
+
         
-    results = 0
-    for element in skills:
-        results += dataskills.get(element, 0)
-        
+    results = dataskills[dataskills['dataskill'].isin(skills)]
+    results = results.iloc[:,[1,3]]
+    results.set_index('dataskill', inplace=True)
+    dictator = results.to_dict()
+    dictator = dictator['percentage']
     
     
-    return render(request, "estimate.html",  {'skills': skills, 'dataskills': dataskills, 'check': check, 'results': results })
+    return render(request, "estimate.html",  {'skills': skills, 'dataskills': dataskills.to_html(), 'check': check, 'results': results.to_html(), 'dictator': dictator })
