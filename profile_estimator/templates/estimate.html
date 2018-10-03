@@ -25,6 +25,23 @@
                 <div class="col-md-4 col-lg-4 text-center">
                     <div class="card" id="form-card">
                     <h3>{{ skills }}</h3>
+
+
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-4 text-center">
+                    <div class="card" id="form-card">
+                    {% for skill in dataskills %}
+                    <h3>{{ skill.dataskill }}</h3>
+                
+                    {% endfor %} 
+                    </div>
+                </div>
+                  <div class="col-md-4 col-lg-4 text-center">
+                    <div class="card" id="form-card">
+
+                    <h3>{{ dataskills }}</h3>
                     </div>
                 </div>
             </div>

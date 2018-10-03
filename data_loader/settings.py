@@ -81,14 +81,21 @@ WSGI_APPLICATION = 'data_loader.wsgi.application'
 
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'omulhvqa',
+#         'USER': 'omulhvqa',
+#         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+#         'HOST': 'horton.elephantsql.com',
+#         'PORT': '5432'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'omulhvqa',
-        'USER': 'omulhvqa',
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': 'horton.elephantsql.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
