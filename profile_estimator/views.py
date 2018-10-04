@@ -29,8 +29,6 @@ def estimate(request):
     
     skills = request.session.get('skills')
     skills = skills.split(',')
-    # dataskills = DataSkill.objects.all()
-    # dataskills = dataskills.objects.values()
     
     
     
